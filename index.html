@@ -8,7 +8,74 @@
     <script>
 
           console.log("hello");
-
+        let CompC = function (){
+            let C = Math.floor(Math.random()*3+1);
+            if( C === 1) {return "rock";}
+            else if (C === 2){ return "paper";}
+            else {return "scissors";}
+        } 
+        let HumC = function() {
+            let answer = String(prompt("Please enter your choice: "));
+            return answer.toLowerCase();
+        }
+        let hums=0;
+        let coms=0;
+        let Round = function(HumC,CompC){
+            if(HumC === "paper" && CompC === "paper"){
+                console.log("paper and paper is a draw");
+            }
+            
+            else if(HumC === "paper" && CompC === "rock"){
+                console.log("you win paper beats rock");
+                hums=hums+1;
+            }
+            
+            else if(HumC === "paper" && CompC === "scissors"){
+                console.log("you lose scissors beats paper");
+                coms=coms+1;
+            }
+            
+            else if(HumC === "scissors" && CompC === "paper"){
+                console.log("you win scissors beats paper");
+                hums=hums+1;
+            }
+            
+            else if(HumC === "scissors" && CompC === "scissors"){
+                console.log("scissors and scissors is a draw");
+            }
+            
+            else if(HumC === "scissors" && CompC === "rock"){
+                console.log("you lose rock beats scissors");
+                coms=coms+1;
+            }
+            
+            else if(HumC === "rock" && CompC === "paper"){
+                console.log("you lose paper beats rock");
+                coms=coms+1;
+            }
+            
+            else if(HumC === "rock" && CompC === "scissors"){
+                console.log("you win rock beats scissors");
+                hums=hums+1;
+            }
+            
+            else if(HumC === "rock" && CompC === "rock"){
+                console.log("rock and rock is a draw");
+            }
+        }
+        let game = function(){
+            Round(HumC(),CompC())
+            Round(HumC(),CompC())
+            Round(HumC(),CompC())
+            Round(HumC(),CompC())
+            Round(HumC(),CompC())
+            if (hums > coms){
+                console.log("you win the game");
+            }else{
+                console.log("you lose the game");
+            }
+        }
+        game();
     </script>
   </body>
 </html>
